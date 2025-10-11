@@ -7,7 +7,7 @@ add_library(enb-api::enb-api ALIAS enb-api)
 
 target_include_directories(enb-api INTERFACE
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
-    $<INSTALL_INTERFACE:include>
+    $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
 )
 
 # Installation
@@ -16,7 +16,7 @@ install(FILES
     ENBSeriesAPI.h
     ENBSeriesSDK.h
     AntTweakBar.h
-    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/enb-api
+    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
 )
 
 install(TARGETS enb-api
